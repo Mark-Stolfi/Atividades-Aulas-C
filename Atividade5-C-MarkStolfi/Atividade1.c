@@ -4,18 +4,16 @@
 #include <stdio.h>
 
 int main() {
-    int i=1, criancas=0;
-    float F=0, M=0, mes_vida, periodo=0;
+    int i=1, criancas=0, mes_vida;
+    float F=0, M=0, periodo=0;
     char sexo;
     printf("Digite a quantidade de criancas nascidas: \n");
-    scanf("%d%*c", &criancas);
+    scanf("%d", &criancas);
 
 
     while (i <= criancas) {
-        printf("Digite o sexo crianca %d:\n",i);
-        scanf("%c%*c", &sexo);
-        printf("Digite quantos meses a crianca viveu");
-        scanf("%d%*c", &mes_vida);
+        printf("Digite o sexo da crianca e quantos meses viveu (ex: M 12): %d:\n", i);
+        scanf(" %c %d", &sexo, &mes_vida);
         if (sexo == 'm' || sexo == 'M') {
             M += 1;
         }
