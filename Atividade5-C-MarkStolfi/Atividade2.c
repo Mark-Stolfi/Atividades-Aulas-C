@@ -6,7 +6,7 @@
 
 int main() {
 float media_sala = 0, soma = 0, media_alun = 0, nota1, nota2, a1=0, a2=0, a3=0, a4=0, a5=0, a6=0;
-int aprovado, reprovado, exame, i =1;
+int aprovado = 0, reprovado = 0, exame = 0, i =1;
 
     while (i <= 6) {
         printf("*Dica: Use espaco entre as notas\n");
@@ -46,16 +46,20 @@ int aprovado, reprovado, exame, i =1;
 
         if (media_alun <= 3) {
             printf("Aluno %d Reprovado | Media: %.1f\n", i, media_alun);
+            reprovado++;
         }
         else if ( media_alun < 7) {
             printf("Aluno %d Exame | Media: %.1f\n", i, media_alun);
+            exame++;
         }
         else{
             printf("Aluno %d Aprovado | Media: %.1f\n", i, media_alun);
+            aprovado++;
         }
 
         i++;
     }
     media_sala = a1 + a2 + a3 + a4 + a5 + a6 / 6;
-    printf("Media de sala: %.1f", media_sala);
+    printf("Media de sala: %.1f\n", media_sala);
+    printf("Status dos alunos:\nExame: %d\nReprovado(s): %d\nAprovado(s): %d\n", exame, reprovado, aprovado);
 }
