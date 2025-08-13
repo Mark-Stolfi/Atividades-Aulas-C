@@ -7,32 +7,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main() {
-    int array[9], primo[9], pos[9], i, a, p, teste, qtd=0;
+    int array[9], primo, pos, i, a, divisores, qtd=0;
 
     for (i = 0; i < 9; i++) {
         printf("%d: Digite um numero: ",i + 1);
         scanf("%d", &array[i]);
         }
-    i=0;
+
     for (i = 0; i < 9; i++ ) {
-        teste = 0;
-        for (a = 1; a == array[i]; a++) {
-            teste = array[i] % (i + 1);
+        divisores =0;
+        for (a = 1; a <= array[i]; a++) {
+            if (array[i] % a == 0) {
+                divisores++;
+
+            }
         }
-        if (teste == 2)
-        {
+        if (divisores == 2) {
+            primo = array[i];
+            pos = i + 1;
             qtd++;
-            primo[qtd] = array[i];
-            pos[qtd] = i + 1;
+            printf("Numero Primo: %d | Posicao: %d\n", primo, pos);
         }
 
-
-    }
-    i=0;
-    for (i = 0; i < qtd; i++) {
-        printf("Numero Primo: %d | Posicao: %d\n", primo[i], pos[i]);
     }
     printf("Quantidade de Primos: %d\n", qtd);
-
-
 }
