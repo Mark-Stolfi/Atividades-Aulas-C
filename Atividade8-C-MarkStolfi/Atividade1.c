@@ -23,7 +23,7 @@ int m[2][2], r[2][2], maior=0;
             r[l][c] = m[l][c];
             if (r[l][c] < maior) {
                 r[l][c] = r[l][c] * maior;//Entendi que o maior elemento (multiplicador)
-                                          //não seja multiplicado por ele mesmo
+                                          //não seja multiplicado por ele mesmo, então ele continua igual
             }
             printf("%d | ", r[l][c]);
 

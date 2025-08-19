@@ -1,9 +1,7 @@
 //
 // Created by Mark_stolf on 12/08/2025.
 //
-//
-// Created by Mark_stolf on 12/08/2025.
-//
+
 #include <stdio.h>
 #include <stdlib.h>
 int main() {
