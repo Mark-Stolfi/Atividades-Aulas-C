@@ -1,33 +1,31 @@
 //
-// Created by mark_stolf on 13/08/2025.
+// Created by Mark_stolf on 19/08/2025.
 //
 #include <stdio.h>
+
 int main() {
-int m[2][2], r[2][2], maior=0;
+    int matrizM[2][2];
+    int maiorNumero = 0;
+    int matrizR[2][2];
 
-    printf("Digite 4 numeros\n");
-    for (int l = 0; l < 2; l++) {
-        for (int c = 0; c < 2; c++) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Valor (%d,%d): ", i, j);
+            scanf("%d", &matrizM[i][j]);
 
-            printf("\nLinha %d Coluna %d = ", l, c);
-
-            scanf("%d", &m[l][c]);
-            if (m[l][c] > maior) {
-                maior = m[l][c];
+            if (matrizM[i][j] > maiorNumero) {
+                maiorNumero = matrizM[i][j];
             }
         }
     }
 
-    for (int l = 0; l < 2; l++) {
-        for (int c = 0; c < 2; c++) {
-            r[l][c] = m[l][c];
-            if (r[l][c] < maior) {
-                r[l][c] = r[l][c] * maior;//Entendi que o maior elemento (multiplicador)
-                                          //não seja multiplicado por ele mesmo, então ele continua igual
-            }
-            printf("%d | ", r[l][c]);
-
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            matrizR[i][j] = matrizM[i][j] * maiorNumero;
+            printf("%d ", matrizR[i][j]);
         }
         printf("\n");
     }
+
+    return 0;
 }
